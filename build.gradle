@@ -27,6 +27,10 @@ task zip(type: Zip) {
 	baseName "trainSchedule"
 }
 
+tasks.withType(JavaCompile) {
+    options.release = 8
+}
+
 //declare task dependencies
 build.dependsOn zip
 zip.dependsOn npm_build
